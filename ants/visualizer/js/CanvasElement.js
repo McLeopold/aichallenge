@@ -879,7 +879,7 @@ CanvasElementAntsMap.prototype.draw = function() {
 CanvasElementAntsMap.prototype.drawAIStateVisualization = function(drawingLayer)
 {
 	// check that there is a selected player for drawing ai visualizations
-	if (this.state.aistatePlayer !== undefined) {
+	if (this.state.aistatePlayer !== undefined && overlay_history !== undefined) {
 		// set the default layer
 		var	currentLayer = 1;
 		// set the default line width and colours
