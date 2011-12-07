@@ -720,7 +720,7 @@ CanvasElementAntsMap.prototype.draw = function() {
 	}
 
 	// draw ai-state visualization graphics (layer 0)
-	this.drawAIStateVisualization(0);
+	this.state.replay.meta['replaydata']['overlay_history'] && this.drawAIStateVisualization(0);
 
 	// draw ants sorted by color
 	for (hash in this.drawStates) {
@@ -858,7 +858,7 @@ CanvasElementAntsMap.prototype.draw = function() {
 	}
 
 	// draw ai-state visualization graphics (layer 1)
-	this.drawAIStateVisualization(1);
+	this.state.replay.meta['replaydata']['overlay_history'] && this.drawAIStateVisualization(1);
 
 	// fog
 	if (this.state.fogPlayer !== undefined) {
@@ -870,7 +870,7 @@ CanvasElementAntsMap.prototype.draw = function() {
 	}
 
 	// draw ai-state visualization graphics (layer 2)
-	this.drawAIStateVisualization(2);
+	this.state.replay.meta['replaydata']['overlay_history'] && this.drawAIStateVisualization(2);
 };
 
 /**
@@ -879,7 +879,7 @@ CanvasElementAntsMap.prototype.draw = function() {
 CanvasElementAntsMap.prototype.drawAIStateVisualization = function(drawingLayer)
 {
 	// check that there is a selected player for drawing ai visualizations
-	if (this.state.aistatePlayer !== undefined && overlay_history !== undefined) {
+	if (this.state.aistatePlayer !== undefined) {
 		// set the default layer
 		var	currentLayer = 1;
 		// set the default line width and colours
